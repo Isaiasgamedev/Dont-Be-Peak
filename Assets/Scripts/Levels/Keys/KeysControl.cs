@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeysControl : MonoBehaviour
 {
-	public DoorsBehavior DoortoOpen;
+	public DoorsBehavior[] DoortoOpen;
 	public Animator anim;
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -17,11 +17,23 @@ public class KeysControl : MonoBehaviour
 
 	public void GetKey()
 	{
-		anim.Play("Get");
+		if(anim != null)
+		{
+			anim.Play("Get");
+		}
+		else
+		{
+			OpendDoor();
+		}
+		
 	}
 
 	public void OpendDoor()
 	{
-		DoortoOpen.OpendDoor();
+		for (int i = 0; i < DoortoOpen.Length; i++)
+		{
+			DoortoOpen[i].OpendDoor();
+		}
+		
 	}
 }
