@@ -4,24 +4,50 @@ using UnityEngine;
 
 public class HabilityDetector : MonoBehaviour
 {
-	public GameObject HurtDesactive, InvencibleDesactive;
-	public enum Powers { Invencible, Inactive}
-	public Powers PowersNow;    
+	public HabilityManager Manager;
+	public PlayerMovement PlayerRef;
+	public GameObject HurtDesactive;
+	public GameObject[] ActivePower;
+	public float TimerPW;
+	public bool Activated;
 
-	public void ActiveIvencible()
-	{
-		StartCoroutine(TimerPower(20));
-	}	
 
-	IEnumerator TimerPower(float Timer)
+	private void Update()
 	{
-		PowersNow = Powers.Invencible;
-		HurtDesactive.SetActive(false);
-		InvencibleDesactive.SetActive(true);
-		yield return new WaitForSeconds(Timer);
-		HurtDesactive.SetActive(true);
-		InvencibleDesactive.SetActive(false);
-		PowersNow = Powers.Inactive;
+		if (Activated)
+		{
+			if(TimerPW > 0)
+			{
+				TimerPW -= Time.deltaTime;
+			}
+			else
+			{
+				TimerPW = 0;
+			}
+		}
+		else
+		{
+			TimerPW = 0;
+		}
 	}
 
+	public void useHability(HabilitysPlayer.Powers  PowersUse)
+	{
+		TimerPW = Manager.HabilitysPlayerNow[(int)PowersUse].Duration;		
+		StartCoroutine(UseNowPower(HurtDesactive, ActivePower[(int)PowersUse]));
+	}
+
+
+	IEnumerator UseNowPower(GameObject Hurt, GameObject PowerActivated)
+	{
+		Activated = true;
+		Hurt.SetActive(false);
+		PowerActivated.SetActive(true);
+
+		yield return new WaitForSeconds(TimerPW);
+
+		Hurt.SetActive(true);
+		PowerActivated.SetActive(false);
+		Activated = false;
+	}
 }

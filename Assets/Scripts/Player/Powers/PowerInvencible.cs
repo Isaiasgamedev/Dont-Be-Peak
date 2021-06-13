@@ -5,13 +5,14 @@ using UnityEngine;
 public class PowerInvencible : MonoBehaviour
 {
 	public Animator anim;
+	public HabilitysPlayer.Powers PowerRef;
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.tag == "Player")
 		{
 			anim.Play("GetSkull");
-			collision.gameObject.GetComponentInChildren<HabilityDetector>().ActiveIvencible();
+			HabilityManager.instance.AddPower(PowerRef);
 		}
 	}	
 

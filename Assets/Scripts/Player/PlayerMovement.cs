@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
 
 	public HurtDetector HurtDetectorRef;
 
+	[Header("HABILITYS PLAYER")]
+
+	public HabilityManager ManagerHabilitys;
+	public int Controlhability;
+
 	void Start()
     {
 		 
@@ -27,14 +32,46 @@ public class PlayerMovement : MonoBehaviour
     {
 		if(PlayerStatesNow != PlayerStates.Isdamage)
 		{
-			Movement.x = Input.GetAxisRaw("Horizontal");
-			Movement.y = Input.GetAxisRaw("Vertical");
+
+			if (Movement.y == 0)
+			{
+				Movement.x = Input.GetAxisRaw("Horizontal");
+			}
+				
+			if(Movement.x == 0)
+			{
+				Movement.y = Input.GetAxisRaw("Vertical");
+			}
+			
 			DetectSide();
 		}
 		else
 		{
 			Movement = Vector2.zero;
-		}	
+		}
+
+		if (Input.GetButtonDown("LS"))
+		{
+			if(Controlhability > 0)
+			{
+				Controlhability--;				
+			}
+		}
+		else if (Input.GetButtonDown("RS"))
+		{
+			if (Controlhability < 2)
+			{
+				Controlhability++;
+			}
+		}
+
+		if (Input.GetButtonDown("Fire2"))
+		{
+			if (Controlhability > -1)
+			{
+				ManagerHabilitys.PowerUseControl((HabilitysPlayer.Powers)Controlhability);
+			}
+		}
 	}
 
 	private void FixedUpdate()
@@ -57,13 +94,21 @@ public class PlayerMovement : MonoBehaviour
 
 	public IEnumerator HurtState()
 	{
-		Debug.Log("HURT");
-		HurtDetectorRef.Hp--;
-		PlayerStatesNow = PlayerStates.Isdamage;
+		if(PlayerStatesNow == PlayerStates.Isdamage)
+		{
+			yield return null;
+		}
+		else
+		{
+			HurtDetectorRef.Hp--;
+			PlayerStatesNow = PlayerStates.Isdamage;
+
+			yield return new WaitForSeconds(3);
+
+			PlayerStatesNow = PlayerStates.Iswating;
+		}
 		
-		yield return new WaitForSeconds(5);
 		
-		PlayerStatesNow = PlayerStates.Iswating;
 	}
 
 	public void LastPositionReturn(Transform returnposition)

@@ -15,11 +15,11 @@ C:/Users/isaia/Desktop/PROJETOS/Dont-Be-Peak
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63833
+62714
 Successfully changed project path to: C:/Users/isaia/Desktop/PROJETOS/Dont-Be-Peak
 C:/Users/isaia/Desktop/PROJETOS/Dont-Be-Peak
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 312.09 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 125.24 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.10f1 (297d780c91bc)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unitys/2020.3.10f1/Editor/Data/Resources/UnitySubsystems
@@ -35,175 +35,16 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unitys/2020.3.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unitys/2020.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unitys/2020.3.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56836
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56068
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unitys/2020.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006782 seconds.
+Registered in 0.186754 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 64.74 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 101.36 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in 20.645 seconds
+- Completed reload, in 18.345 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.045393 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.324 seconds
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.48 seconds
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1663 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.6 MB.
-System memory in use after: 74.6 MB.
-
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2103.
-Total: 13.738900 ms (FindLiveObjects: 0.451900 ms CreateObjectMapping: 0.097400 ms MarkObjects: 12.048100 ms  DeleteObjects: 1.138900 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_5.asset
-  artifactKey: Guid(91cf819e9ad979e4a82e9e231707447d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_5.asset using Guid(91cf819e9ad979e4a82e9e231707447d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c3ade01728524959b20d29edfb765e9') in 0.442009 seconds
-  Import took 0.473710 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000746 seconds.
-  path: Assets/Teste.spriteatlas
-  artifactKey: Guid(0f6008f22812f5f428d08676088eeed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Teste.spriteatlas using Guid(0f6008f22812f5f428d08676088eeed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48a3aab251955bdd1cdb7ab77a1b1b42') in 0.092716 seconds
-  Import took 0.159476 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000372 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_0.asset
-  artifactKey: Guid(04525193938cb324bbef6a9379526322) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_0.asset using Guid(04525193938cb324bbef6a9379526322) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c18ac4833b2a0992c63bd5d4347bc0c4') in 0.044937 seconds
-  Import took 0.053813 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000318 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_9.asset
-  artifactKey: Guid(7e0945ef7ebf88e43a2734febafed370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_9.asset using Guid(7e0945ef7ebf88e43a2734febafed370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77e48e937000a7a8f8950f3ae270eba2') in 0.053423 seconds
-  Import took 0.066154 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000463 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_13.asset
-  artifactKey: Guid(da9e6e08baea829469cfbd7c6e93af80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_13.asset using Guid(da9e6e08baea829469cfbd7c6e93af80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed7afd68410ccad1f2dd6f809d49b939') in 0.049503 seconds
-  Import took 0.065059 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000350 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_12.asset
-  artifactKey: Guid(0f86c13b4d9a60846b2c6f9b0b435e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_12.asset using Guid(0f86c13b4d9a60846b2c6f9b0b435e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '827347f4f0248f9e878d8f061f079ca1') in 0.068587 seconds
-  Import took 0.078940 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001143 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_2.asset
-  artifactKey: Guid(f3a8ba7a0a46cf347be31156840ba12c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_2.asset using Guid(f3a8ba7a0a46cf347be31156840ba12c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cf1e8b46a9596501834db8058c4463f') in 0.074400 seconds
-  Import took 0.085254 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000430 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_4.asset
-  artifactKey: Guid(978974a35b7f4474b897f84c351c15f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_4.asset using Guid(978974a35b7f4474b897f84c351c15f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0b040b89e8e417ea81fa3df347ccdf8') in 0.047718 seconds
-  Import took 0.058258 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000364 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_10.asset
-  artifactKey: Guid(4fbc9c399b2de8440921431d39cc3295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_10.asset using Guid(4fbc9c399b2de8440921431d39cc3295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27a4fdda478ed2d9decbfdd7e4d30411') in 0.032212 seconds
-  Import took 0.038882 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000339 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_1.asset
-  artifactKey: Guid(862b8818a69bd604285444091dff34d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_1.asset using Guid(862b8818a69bd604285444091dff34d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b623d5a578a0f708dc54d5f8c025e84') in 0.050603 seconds
-  Import took 0.057756 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000301 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_8.asset
-  artifactKey: Guid(3bb578e722b8ac94c9f3e5dde23d647f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_8.asset using Guid(3bb578e722b8ac94c9f3e5dde23d647f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5104f0cced29bb5546f3780ed19fc7c') in 0.042149 seconds
-  Import took 0.052643 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000319 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_7.asset
-  artifactKey: Guid(1b5e57ba164224449ad6000a676e2052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_7.asset using Guid(1b5e57ba164224449ad6000a676e2052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf926cdd097b59eefaf63ffdc496d1d8') in 0.059071 seconds
-  Import took 0.068358 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000355 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_6.asset
-  artifactKey: Guid(dad242e5c8489c941b0ef6b96af9410d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_6.asset using Guid(dad242e5c8489c941b0ef6b96af9410d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16508c546796650ffa802111e3d46989') in 0.029053 seconds
-  Import took 0.037786 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000379 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_3.asset
-  artifactKey: Guid(681f6bf11db34f949bbd10020180c544) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_3.asset using Guid(681f6bf11db34f949bbd10020180c544) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1cb80ade291a24b5ac8b201edf0132c') in 0.038283 seconds
-  Import took 0.046160 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001434 seconds.
-  path: Assets/TileMaps/0x72_16x16DungeonTileset.v3_11.asset
-  artifactKey: Guid(0cb80166a33acfc44ad694dd292674e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TileMaps/0x72_16x16DungeonTileset.v3_11.asset using Guid(0cb80166a33acfc44ad694dd292674e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3296d48e787abea532c5b57771a202d') in 0.035261 seconds
-  Import took 0.044062 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.039743 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.734 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1655 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 77.4 MB.
-System memory in use after: 77.4 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2110.
-Total: 3.637100 ms (FindLiveObjects: 0.303400 ms CreateObjectMapping: 0.155200 ms MarkObjects: 3.074300 ms  DeleteObjects: 0.101700 ms)
-
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+Registered in 0.746624 seconds.
