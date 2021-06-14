@@ -10,7 +10,7 @@ public class HabilityDetector : MonoBehaviour
 	public GameObject[] ActivePower;
 	public float TimerPW;
 	public bool Activated;
-
+	public AudioSource Audio;
 
 	private void Update()
 	{
@@ -33,7 +33,8 @@ public class HabilityDetector : MonoBehaviour
 
 	public void useHability(HabilitysPlayer.Powers  PowersUse)
 	{
-		TimerPW = Manager.HabilitysPlayerNow[(int)PowersUse].Duration;		
+		TimerPW = Manager.HabilitysPlayerNow[(int)PowersUse].Duration;
+		HudControl.instance.TempTime = Manager.HabilitysPlayerNow[(int)PowersUse].Duration;
 		StartCoroutine(UseNowPower(HurtDesactive, ActivePower[(int)PowersUse]));
 	}
 
@@ -44,6 +45,7 @@ public class HabilityDetector : MonoBehaviour
 		Hurt.SetActive(false);
 		PowerActivated.SetActive(true);
 		PlayerRef.PlayerStatesNow = PlayerMovement.PlayerStates.Isattack;
+		Audio.Play();
 
 		yield return new WaitForSeconds(TimerPW);
 	
@@ -51,5 +53,6 @@ public class HabilityDetector : MonoBehaviour
 		PowerActivated.SetActive(false);
 		Activated = false;
 		PlayerRef.PlayerStatesNow = PlayerMovement.PlayerStates.Iswating;
+		Audio.Stop();
 	}
 }

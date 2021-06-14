@@ -8,6 +8,7 @@ public class BoxPushControl : MonoBehaviour
 	public Vector3 Oringpos, Targetpos;
 	public float timetomove;
 	public WallDetectSide[] SideBlocked;
+	public AudioSource Audio;
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
@@ -23,7 +24,7 @@ public class BoxPushControl : MonoBehaviour
 
 	IEnumerator MovingBox(Vector3 direction)
 	{
-		Debug.Log("TESTE");
+		Audio.Play();
 		Ismoving = true;
 		float elepsedTime = 0;
 		Oringpos = transform.position;

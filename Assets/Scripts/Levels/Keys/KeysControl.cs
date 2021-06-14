@@ -7,19 +7,19 @@ public class KeysControl : MonoBehaviour
 	public DoorsBehavior[] DoortoOpen;
 	public Animator anim;
 	public KeysPlayer.Keys KeyRef;
-	public HudControl HudRef;
+	public bool NeedKey;
+	public AudioSource Audio;
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.tag == "Player")
 		{
 			GetKey();
-			if(HudRef != null)
+			if (NeedKey)
 			{
 				KeysManager.instance.AddKeyNow(KeyRef);
-				HudRef.AddKeyHas();
 			}
-			
+				
 		}
 	}
 
@@ -28,6 +28,8 @@ public class KeysControl : MonoBehaviour
 		if(anim != null)
 		{
 			anim.Play("Get");
+			PointsManager.instance.GetPoints(500);
+			Audio.Play();
 		}
 		else
 		{

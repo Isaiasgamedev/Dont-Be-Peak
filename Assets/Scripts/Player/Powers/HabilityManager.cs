@@ -17,6 +17,7 @@ public class HabilityManager : MonoBehaviour
 	public List<HabilitysPlayer> HabilitysPlayerNow = new List<HabilitysPlayer>();
 	public HabilityDetector Detector;
 	public static HabilityManager instance;
+	
 
 	private void Awake()
 	{

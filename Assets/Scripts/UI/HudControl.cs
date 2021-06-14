@@ -7,32 +7,68 @@ using TMPro;
 public class HudControl : MonoBehaviour
 {
 	
-	public TextMeshProUGUI PT;
-	public TextMeshProUGUI HB;
+	public TextMeshProUGUI PT;	
 	public TextMeshProUGUI HBQT;
-	public TextMeshProUGUI PW;
-	public TextMeshProUGUI KY;
+	public TextMeshProUGUI TimerFase;
+
+
+	public float TimerFaseCount;
+	public float TempTime;
+	public bool StartCount;
+	public bool TimerNow;
 
 	public Image HpBar;
 	public Image TmBar;
 
 	public Image[] HbImagens;
+	public Image[] KeysImagens;
+
 
 	public HurtDetector Hurt;
 	public HabilityDetector Hability;
 	public PointsManager Points;
 	public PlayerMovement PlayerRef;
-	public string[] HabilitysText;
 
+	public static HudControl instance;
+
+	private void Awake()
+	{
+		if (instance != null && instance != this)
+		{
+			Destroy(gameObject);
+		}
+		else
+		{
+			instance = this;
+		}
+	}
+
+	private void Start()
+	{
+		StartCount = true;
+	}
 
 	private void Update()
 	{
-		HpBar.fillAmount = Hurt.Hp / 10;
-		PT.text = Points.TotalPoint.ToString("00000000");
-		TmBar.fillAmount = Hability.TimerPW / 10;
-		HBQT.text = Hability.Manager.HabilitysPlayerNow[PlayerRef.Controlhability].Quant.ToString("00");
-		
+		if (DialogueManager.instance.DialogueStatesNow == DialogueManager.DialogueStates.Indialogue) return;
+		if (StartCount)
+		{
+			TimerFaseCount += Time.deltaTime;					
+		}
 
+		float minutes = Mathf.FloorToInt(TimerFaseCount / 60);
+		float seconds = Mathf.FloorToInt(TimerFaseCount % 60);
+		TimerFase.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+
+		HpBar.fillAmount = Hurt.Hp / 10;
+		PT.text = Points.TotalPoint.ToString("00000000");		
+
+		TmBar.fillAmount = Hability.TimerPW / TempTime;
+		if(PlayerRef.Controlhability > -1)
+		{
+			HBQT.text = Hability.Manager.HabilitysPlayerNow[PlayerRef.Controlhability].Quant.ToString("0");
+		}
 			
 	}
 
@@ -46,25 +82,11 @@ public class HudControl : MonoBehaviour
 				{
 					HbImagens[i].gameObject.SetActive(false);
 				}
-
-
 			}
+
 			HbImagens[PlayerRef.Controlhability].gameObject.SetActive(true);
-		}
-		
+		}		
 	}
 
-	public void AddKeyHas()
-	{
-		Debug.Log("AQUI");
-		for (int i = 0; i < KeysManager.instance.KeysPlayerNow.Count; i++)
-		{
-			if (KeysManager.instance.KeysPlayerNow[i].Haskey)
-			{
-				Debug.Log("AQUI  1");
-				KY.text = KeysManager.instance.KeysPlayerNow[i].KeysNow.ToString();
-				break;
-			}			
-		}
-	}
+	
 }

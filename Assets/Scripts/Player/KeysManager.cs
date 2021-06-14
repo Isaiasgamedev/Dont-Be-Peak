@@ -32,5 +32,13 @@ public class KeysManager : MonoBehaviour
 	public void AddKeyNow(KeysPlayer.Keys Key)
 	{
 		KeysPlayerNow[(int)Key].Haskey = true;
+
+		for (int i = 0; i < KeysManager.instance.KeysPlayerNow.Count; i++)
+		{
+			if (KeysManager.instance.KeysPlayerNow[i].Haskey)
+			{
+				HudControl.instance.KeysImagens[i].gameObject.SetActive(true);
+			}
+		}
 	}
 }

@@ -6,6 +6,7 @@ public class HurtDetector : MonoBehaviour
 {
 	public float Hp;
 	public PlayerMovement Playref;
+	public AudioSource Audio;
 	
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -16,6 +17,8 @@ public class HurtDetector : MonoBehaviour
 			{
 				StartCoroutine(Playref.HurtState());
 				Playref.PointsRef.LessPoints(100);
+				Audio.Play();
+				CinemachineShake.Instance.ShakeCamera(3f, 0.5f);
 			}			
 		}
 	}

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public virtual void Start()
+	public enum EnemyState { Inwait, inMove, Indamage, InDead}
+	public EnemyState EnemyStateNow;
+	public Animator anim;
+	public AudioSource Audio;
+
+	// Start is called before the first frame update
+	public virtual void Start()
     {
         
     }
@@ -13,12 +18,30 @@ public class BaseEnemy : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-		Domove();
+		if (DialogueManager.instance.DialogueStatesNow == DialogueManager.DialogueStates.Indialogue) return;
+
+		if(EnemyStateNow != EnemyState.InDead)
+		{
+			Domove();
+		}
+		
 	}
 
 	public virtual void Domove()
 	{
 
+	}
+
+	public virtual void DoDead()
+	{
+		EnemyStateNow = EnemyState.InDead;
+		Audio.Play();
+		anim.Play("Dead");
+	}
+
+	public void SetDesactive()
+	{
+		this.gameObject.SetActive(false);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)

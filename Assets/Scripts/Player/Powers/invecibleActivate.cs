@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class invecibleActivate : MonoBehaviour
 {
+	
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.gameObject.layer == 7)
 		{
-			collision.gameObject.SetActive(false);
+			collision.gameObject.GetComponent<BaseEnemy>().DoDead();
+			PointsManager.instance.GetPoints(200);
 		}
 	}
 }

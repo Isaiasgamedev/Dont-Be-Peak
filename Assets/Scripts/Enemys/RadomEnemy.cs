@@ -29,8 +29,8 @@ public class RadomEnemy : BaseEnemy
 
 	public override void Domove()
 	{
-		
-		if(ControlMoves != 0)
+		if (DialogueManager.instance.DialogueStatesNow == DialogueManager.DialogueStates.Indialogue) return;
+		if (ControlMoves != 0)
 		{
 			if (EnemyStatesNow == EnemyStates.Iswating)
 			{

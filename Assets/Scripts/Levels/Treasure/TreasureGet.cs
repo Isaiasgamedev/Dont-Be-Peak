@@ -6,11 +6,12 @@ public class TreasureGet : MonoBehaviour
 {
 	public int Points;
 	public Animator anim;
-	 
+	public AudioSource Audio;
 
 	public void GetTreasure()
 	{
 		anim.Play("treasure");
+		Audio.Play();
 	}
 
 	public void DesactiveTreasure()

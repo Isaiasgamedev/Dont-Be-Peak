@@ -31,13 +31,20 @@ public class PlayerMovement : MonoBehaviour
 	public HabilityManager ManagerHabilitys;
 	public int Controlhability;
 
+	[Header("HUD PLAYER")]
+
+	public HudControl Hudref;
+
 	void Start()
     {
 		Controlhability = -1;
+		Hudref = HudControl.instance;
 	}
     
     void Update()
     {
+		if (DialogueManager.instance.DialogueStatesNow == DialogueManager.DialogueStates.Indialogue) return;
+
 		if(PlayerStatesNow != PlayerStates.Isdamage && PlayerStatesNow != PlayerStates.Isattack)
 		{
 			if (Movement.y == 0)
@@ -94,22 +101,28 @@ public class PlayerMovement : MonoBehaviour
 			DetectSide();
 		}
 
-
-		if (Input.GetButtonDown("LS"))
+		if(Controlhability > -1)
 		{
-			if(Controlhability > 0)
+			if (Input.GetButtonDown("LS"))
 			{
-				Controlhability--;				
+				if (Controlhability > 0)
+				{
+					Controlhability--;
+					Hudref.SetImageHability();
+				}
+			}
+
+			else if (Input.GetButtonDown("RS"))
+			{
+				if (Controlhability < 2)
+				{
+					Controlhability++;
+					Hudref.SetImageHability();
+				}
 			}
 		}
 
-		else if (Input.GetButtonDown("RS"))
-		{
-			if (Controlhability < 2)
-			{
-				Controlhability++;
-			}
-		}
+		
 
 		if (Input.GetButtonDown("Fire2"))
 		{
@@ -122,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if (DialogueManager.instance.DialogueStatesNow == DialogueManager.DialogueStates.Indialogue) return;
 		if (PlayerStatesNow != PlayerStates.Isdamage)
 		{
 			rb2D.MovePosition(rb2D.position + Movement * Movespeed * Time.fixedDeltaTime);
