@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class HurtDetector : MonoBehaviour
 {
-	public int Hp;
+	public float Hp;
 	public PlayerMovement Playref;
+	
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.tag == "DamagePlayer")
-		{					
-			StartCoroutine(Playref.HurtState());
+		{
+			if(Playref.PlayerStatesNow != PlayerMovement.PlayerStates.Isdamage)
+			{
+				StartCoroutine(Playref.HurtState());
+				Playref.PointsRef.LessPoints(100);
+			}			
 		}
 	}
 }

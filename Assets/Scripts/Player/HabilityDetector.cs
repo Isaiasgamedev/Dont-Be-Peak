@@ -43,11 +43,13 @@ public class HabilityDetector : MonoBehaviour
 		Activated = true;
 		Hurt.SetActive(false);
 		PowerActivated.SetActive(true);
+		PlayerRef.PlayerStatesNow = PlayerMovement.PlayerStates.Isattack;
 
 		yield return new WaitForSeconds(TimerPW);
-
+	
 		Hurt.SetActive(true);
 		PowerActivated.SetActive(false);
 		Activated = false;
+		PlayerRef.PlayerStatesNow = PlayerMovement.PlayerStates.Iswating;
 	}
 }

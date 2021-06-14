@@ -6,12 +6,20 @@ public class KeysControl : MonoBehaviour
 {
 	public DoorsBehavior[] DoortoOpen;
 	public Animator anim;
+	public KeysPlayer.Keys KeyRef;
+	public HudControl HudRef;
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.tag == "Player")
 		{
 			GetKey();
+			if(HudRef != null)
+			{
+				KeysManager.instance.AddKeyNow(KeyRef);
+				HudRef.AddKeyHas();
+			}
+			
 		}
 	}
 

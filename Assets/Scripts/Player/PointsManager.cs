@@ -10,4 +10,9 @@ public class PointsManager : MonoBehaviour
 	{
 		TotalPoint += Points;
 	}
+
+	public void LessPoints(int Points)
+	{
+		TotalPoint -= Points;
+	}
 }

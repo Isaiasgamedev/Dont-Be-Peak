@@ -14,9 +14,17 @@ public class PlayerMovement : MonoBehaviour
 	public Rigidbody2D rb2D;
 	Vector2 Movement;
 
+	[Header("ANIMATION PLAYER")]
+
+	public Animator anim;
+
 	[Header("DAMAGE PLAYER")]
 
 	public HurtDetector HurtDetectorRef;
+
+	[Header("POINTS PLAYER")]
+
+	public PointsManager PointsRef;
 
 	[Header("HABILITYS PLAYER")]
 
@@ -25,30 +33,67 @@ public class PlayerMovement : MonoBehaviour
 
 	void Start()
     {
-		 
-    }
+		Controlhability = -1;
+	}
     
     void Update()
     {
-		if(PlayerStatesNow != PlayerStates.Isdamage)
+		if(PlayerStatesNow != PlayerStates.Isdamage && PlayerStatesNow != PlayerStates.Isattack)
 		{
-
 			if (Movement.y == 0)
 			{
 				Movement.x = Input.GetAxisRaw("Horizontal");
+				
 			}
 				
 			if(Movement.x == 0)
 			{
 				Movement.y = Input.GetAxisRaw("Vertical");
 			}
+
+			if(Movement.x == 0 && Movement.y == 0)
+			{
+				anim.Play("Idle");
+			}
+			else
+			{
+				anim.Play("Walk");
+			}
 			
 			DetectSide();
 		}
-		else
+
+		else if(PlayerStatesNow == PlayerStates.Isdamage)
 		{
 			Movement = Vector2.zero;
+			anim.Play("Hit");
 		}
+
+		else if (PlayerStatesNow == PlayerStates.Isattack)
+		{
+			if (Movement.y == 0)
+			{
+				Movement.x = Input.GetAxisRaw("Horizontal");
+
+			}
+
+			if (Movement.x == 0)
+			{
+				Movement.y = Input.GetAxisRaw("Vertical");
+			}
+
+			if (Movement.x == 0 && Movement.y == 0)
+			{
+				anim.Play("IdleAttack");
+			}
+			else
+			{
+				anim.Play("WalkAttack");
+			}
+
+			DetectSide();
+		}
+
 
 		if (Input.GetButtonDown("LS"))
 		{
@@ -57,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
 				Controlhability--;				
 			}
 		}
+
 		else if (Input.GetButtonDown("RS"))
 		{
 			if (Controlhability < 2)

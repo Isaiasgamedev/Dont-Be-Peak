@@ -196,11 +196,13 @@ public class RadomEnemy : BaseEnemy
 			else if (Choice == 2)
 			{
 				EnemySideNow = EnemySide.right;
+				spr.flipX = false;
 			}
 
 			else if (Choice == 3)
 			{
 				EnemySideNow = EnemySide.left;
+				spr.flipX = true;
 			}
 
 			ControlMoves = Moves;

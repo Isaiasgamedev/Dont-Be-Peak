@@ -51,6 +51,7 @@ public class Spike : MonoBehaviour
 			{				
 				x.LastPositionReturn(Return);
 				StartCoroutine(x.HurtState());
+				x.PointsRef.LessPoints(100);
 			}
 		}
 	}
