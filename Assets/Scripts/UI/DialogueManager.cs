@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
     {
 		if(DialogueStatesNow == DialogueStates.Indialogue)
 		{
-			if (Input.GetButtonDown("Jump"))
+			if (Input.GetButtonDown("Fire1"))
 			{
 				if (StartDialogue)
 				{

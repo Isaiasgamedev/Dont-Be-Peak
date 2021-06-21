@@ -276,7 +276,7 @@ MonoBehaviour:
   - para usar o seu poder selecione algum que vc tenha usando "Z" ou "X"
   - depois basta apertar a "C" e pronto.
   - o primeiro poder te torna INVENCIVEL
-  - "com o poder ativado pegue todos os Peaks e eles ser\xE3o destruidos"
+  - com o poder ativado pegue todos os Peaks e eles serao destruidos
   Manager: {fileID: 0}
 --- !u!1 &80290588
 GameObject:
@@ -11112,6 +11112,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327346470}
   m_CullTransparentMesh: 1
+--- !u!1 &372935865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372935867}
+  - component: {fileID: 372935866}
+  - component: {fileID: 372935868}
+  m_Layer: 0
+  m_Name: FINALIZE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &372935866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372935865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb33259f48b13534c82fa5a954547afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &372935867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372935865}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: -41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &372935868
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372935865}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.1104635, y: 0.080467224}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.5428002, y: 1.4506226}
+  m_EdgeRadius: 0
 --- !u!1 &378066918
 GameObject:
   m_ObjectHideFlags: 0
@@ -11550,7 +11620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456867065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: -18.25, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 921021288}
@@ -12764,7 +12834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687102596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: -18.25, z: -20}
+  m_LocalPosition: {x: 0, y: -0.25, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 430152910}
@@ -14060,7 +14130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: -18.25, z: -20}
+  m_LocalPosition: {x: 0, y: -0.25, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14591,9 +14661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-'
+  m_text: PRESS "CTRL"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27b3d602ff51ef9438134bd78e9b4d1e, type: 2}
   m_sharedMaterial: {fileID: 2143487056126369144, guid: 27b3d602ff51ef9438134bd78e9b4d1e, type: 2}
@@ -23719,7 +23787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sentences:
   - Aponte para direcao que deseja mover a caixa usando as setas
-  - apos isso use CTRL e ela ira se mover
+  - apos isso use "CTRL" e ela ira se mover
   Manager: {fileID: 0}
 --- !u!1 &1986179659
 GameObject:
